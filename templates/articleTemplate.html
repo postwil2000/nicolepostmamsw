@@ -1,0 +1,400 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="container-fluid p-0" id="articleTop">
+
+
+
+  {% for page in section.pages %}
+
+    {% if page.title -%}
+
+    <div class="row justify-content-center pt-5 pb-1 bg-white dropShadows">
+      <div class="col-md-8">
+
+        <div class="divBlur">
+
+          <h1 class="text-center fw-lighter txtZ">
+            {{ page.title }}
+          </h1>
+
+        </div>
+      </div>
+    </div>
+
+    {%- endif %}
+
+
+
+    <!--page abstract, intro or really any full width block of text appears here-->
+
+
+    {% if page.extra.blockType is matching("textFull") -%}
+
+      <div class="row justify-content-center p-5 bg-white dropShadows">
+        <div class="col-md-8">
+
+            <div class="divBlur">
+
+
+              <h4 class="fw-light text-center txtZ  ">
+                {{ page.description }}
+              </h4>
+
+              <p class="paragraphs txtZ  ">
+                {{ page.content | safe }}
+              </p>
+
+            </div>
+
+        </div>
+      </div>
+
+    {%- endif %}
+
+
+
+
+
+
+
+    <!--image that spans the full width-->
+
+
+    {% if page.extra.blockType is matching("imgFull") -%}
+
+      <div class="row justify-content-center">
+        <div class="col">
+
+          <div class="articleImage_ContainerC">
+            {%- for asset in page.assets -%}
+              {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("bkg") %}
+
+                {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                <img src="{{ image.url }}" class="articleImage_C articleImage" />
+
+              {% endif %}
+
+
+              {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("logo") %}
+
+                {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                <div class="bg-white logo_Container">
+                  <img src="{{ image.url }}" class="logo_Image dropShadows" />
+                </div>
+              {% endif %}
+              
+            {%- endfor -%}
+
+
+            {%- if page.extra.quote -%}
+
+              <div class="quoteContainer d-flex justify-content-center align-items-center">
+
+                <div class="quoteCircle d-flex justify-content-center align-items-center bg-white dropShadows">
+
+                  <div class="quoteText d-flex justify-content-center align-items-center ">
+
+                  <span class="txtZ divBlur text-center p-3 lh-sm">
+                    "{{ page.extra.quote | safe }}"
+                    
+                    {%- if page.extra.quoteCredit -%}
+                    <br>~<br>
+                    {{ page.extra.quoteCredit | safe }}
+                    {%- endif -%}
+                  </span>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            {%- endif -%}
+          </div>
+
+        </div>
+      </div>
+
+    {%- endif %}
+
+
+
+
+
+
+
+
+    <!--PIC TO THE RIGHT-->
+
+    {% if page.extra.blockType is matching("imgRight") -%}
+
+
+          <div class="row justify-content-center">
+
+
+            <!--Text box to the left-->
+
+            <div class="col-md-8 p-5 text-end bg-white dropShadows">
+  
+              <div class="container">
+                <div class="row justify-content-end">
+                  <div class="col-md-9">
+
+                    <div class="divBlur">
+
+                      <h4 class="fw-light txtZ  ">
+                        {{ page.description }}
+                      </h4>
+                      
+                      <p class="txtZ  ">
+                        {{ page.content | safe }}
+                      </p>
+
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+            <!--image to the right-->
+            <div class="col-md-4 p-0">
+
+
+              <div class="articleImage_Container">
+                {%- for asset in page.assets -%}
+                  {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("bkg") %}
+
+                    {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                    <img src="{{ image.url }}" class="articleImage_R articleImage" />
+
+                  {% endif %}
+
+
+                  {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("logo") %}
+
+                    {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                    <div class="bg-white logo_Container">
+                      <img src="{{ image.url }}" class="logo_Image dropShadows" />
+                    </div>
+                  {% endif %}
+
+
+                  {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("portrait") %}
+
+                    {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                    <div class="bg-white portrait_Container">
+                      <img src="{{ image.url }}" class="portrait_Image" />
+                    </div>
+                  {% endif %}
+
+
+                {%- endfor -%}
+                
+
+
+                {%- if page.extra.quote -%}
+
+                  <div class="quoteContainer d-flex justify-content-center align-items-center">
+
+                    <div class="quoteCircle d-flex justify-content-center align-items-center bg-white dropShadows">
+
+                      <div class="quoteText d-flex justify-content-center align-items-center">
+
+                      <span class="txtZ divBlur text-center p-3 lh-sm">
+                        "{{ page.extra.quote | safe }}"
+                        <br>~<br>
+                        {{ page.extra.quoteCredit | safe }}
+                      </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                {%- endif -%}
+              </div>
+  
+            </div>
+  
+
+
+          </div>
+
+    {%- endif %}
+
+    <!--END OF PIC TO THE RIGHT-->
+
+
+
+    <!--PIC TO THE LEFT-->
+
+    {% if page.extra.blockType is matching("imgLeft") -%}
+
+
+          <div class="row justify-content-center">
+
+
+            <!--image to the left-->
+            <div class="col-md-4 p-0">
+
+
+                <div class="articleImage_Container_L">
+
+                  {%- for asset in page.assets -%}
+                    {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("bkg") %}
+
+                      {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                      <img src="{{ image.url }}" class="articleImage_L articleImage" />
+
+                    {% endif %}
+
+
+                    {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("logo") %}
+
+                      {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                      <div class="bg-white logo_Container">
+                        <img src="{{ image.url }}" class="logo_Image dropShadows" />
+                      </div>
+
+                    {% endif %}
+
+
+                  {%- endfor -%}
+
+                  {%- if page.extra.quote -%}
+
+                  <div class="quoteContainer d-flex justify-content-center align-items-center">
+
+                    <div class="quoteCircle d-flex justify-content-center align-items-center bg-white dropShadows">
+
+                      <div class="quoteText d-flex justify-content-center align-items-center">
+
+                        <span class="txtZ divBlur text-center p-3 lh-sm">
+                          "{{ page.extra.quote | safe }}"
+                          <br>~<br>
+                          {{ page.extra.quoteCredit | safe }}
+                        </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  {%- endif -%}
+                </div>
+  
+            </div>
+
+
+
+            <!--Text box to the right-->
+            <div class="col-md-8 p-5 bg-white dropShadows text-start">
+            
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-9">
+
+                    <div class="divBlur">
+
+                      <h4 class="txtZ  ">
+                        {{ page.description }}
+                      </h4>
+                      
+                      <p class="txtZ  ">
+                        {{ page.content | safe }}
+                      </p>
+
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+
+
+
+            <!--image underneath on mobile-->
+            <div class="col-md-4 p-0">
+
+
+                <div class="articleImage_Container_L-mobile">
+                  {%- for asset in page.assets -%}
+                    {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("bkg") %}
+
+                      {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                      <img src="{{ image.url }}" class="articleImage_L articleImage" />
+
+                    {% endif %}
+
+
+                    {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("logo") %}
+                      {% set image = resize_image(path=asset, width=2000, height=2000, op="fit") %}
+                      <div class="bg-white logo_Container">
+                        <img src="{{ image.url }}" class="logo_Image dropShadows" />
+                      </div>
+                    {% endif %}
+
+
+                  {%- endfor -%}
+
+
+                  {%- if page.extra.quote -%}
+
+                  <div class="quoteContainer d-flex justify-content-center align-items-center">
+
+                    <div class="quoteCircle d-flex justify-content-center align-items-center bg-white dropShadows">
+
+                      <div class="quoteText d-flex justify-content-center align-items-center">
+
+                      <span class="txtZ divBlur text-center p-3 lh-sm">
+                        "{{ page.extra.quote | safe }}"
+                        <br>~<br>
+                        {{ page.extra.quoteCredit | safe }}
+                      </span>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  {%- endif -%}
+                </div>
+  
+            </div>
+
+  
+
+
+          </div>
+
+    {%- endif %}
+
+    <!--END OF PIC TO THE LEFT-->
+
+
+
+  {% endfor %}
+
+
+</div>
+
+
+
+
+
+
+{% endblock content %}
+
+

@@ -1,0 +1,22 @@
+
+<div>
+    {% for asset in page.assets -%}
+    {%- if asset is matching("[.](JPG|jpg|png|jpeg)$") %}
+        {%- if asset is not matching("(thumb)[.](JPG|jpg|png|jpeg)$") -%}
+
+            {% set imageFull = resize_image(path=asset, width=700, op="fit_width") %}
+            {% set imageThumb = resize_image(path=asset, width=240, height=200) %}
+
+
+
+                <a href="{{ imageFull.url }}">
+                <img src="{{ imageThumb.url }}" class="p-1"/>
+                </a>
+
+            {%- endif -%}
+        {% endif -%}
+    {%- endfor %}
+</div>
+
+
+

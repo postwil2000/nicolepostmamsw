@@ -1,0 +1,18 @@
+<div>
+    {% for asset in page.assets -%}
+      {%- if asset is matching("[.](jpg|png|jpeg)$") %}
+        {%- if asset is not matching("(thumb)[.](jpg|png|jpeg)$") -%}
+
+
+            {% set image = resize_image(path=asset, width=240, height=240) %}
+
+
+
+                <a href="{{ get_url(path=asset) }}">
+                <img src="{{ image.url }}" class="p-1"/>
+                </a>
+
+            {%- endif -%}
+        {% endif -%}
+    {%- endfor %}
+</div>
