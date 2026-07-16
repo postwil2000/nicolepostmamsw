@@ -1,0 +1,560 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
+
+body{
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+
+
+
+h4 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+
+span{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+
+
+
+.baseBKG {
+    position: relative;
+    height: auto;
+    width: 100%;
+    margin: 0;           /* Remove default browser margins */
+    padding: 0;          /* Remove default padding */
+    background: 
+    linear-gradient(
+        to bottom,
+        rgba(110, 143, 158, 1)0%,
+        rgba(177, 129, 110, 1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps gradient fixed on scroll */
+    background-size: cover;
+    z-index: -20;
+
+    
+}
+
+
+.bg-white{
+    background: 
+    linear-gradient(
+        to right,
+        rgba(255, 127, 58, 0.15)0%,
+        rgba(175, 247, 186, 0.1) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: 0;
+
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
+
+
+
+.quoteContainer{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.quoteCircle{
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    filter: blur(5px);
+    transition: all 0.5s ease-out;
+
+    background-color: #fff; /* Solid fill for hard edge */
+    border-radius: 50%;
+}
+
+.quoteCircle.animated{
+    width: 240px;
+    height: 240px;
+    filter: blur(0px);
+}
+
+.quoteText{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+
+    border-radius: 50%;
+}
+
+
+
+
+
+
+
+.divBlur{
+    opacity: 0;
+    filter: blur(5px);
+    transition: all 1s ease-out;
+}
+
+.divBlur.animated{
+    opacity: 1;
+    filter: blur(0px);
+}
+
+
+
+.txtZ {
+    z-index: 20;
+}
+
+
+
+.navBarCustom {
+    font-size: 20px;
+    font-weight: normal;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.navBarCustom:hover {
+    font-weight: bold;
+}
+
+
+.navBarCustom::before {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.navBarCustom:active {
+    font-weight: bold;
+    color: green;
+}
+
+
+.navbar{
+   /* width:100vw;*/
+   position: fixed;
+   width: 100%;
+   top: 0px;
+   z-index: 10;
+}
+
+
+
+.navBumper{
+    height: 20vw;  
+}
+
+@media (min-width: 768px){
+    .navBumper{
+    height: 10vw;    
+    }
+}
+
+
+@media (min-width: 768px){
+    .navbar{
+        position: sticky;
+        top:0;     
+    }
+}
+
+
+
+.dropShadows {
+    filter: drop-shadow(5px 10px 5px rgba(0, 0, 0, 0.3));
+}
+
+
+
+.QR {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+
+
+.footerBar {
+
+    max-height: 5vh;
+    white-space: nowrap;
+}
+
+
+
+
+.divTest{
+    background-color: rgba(209, 43, 43, 0.63);
+    z-index: 50;
+}
+
+
+
+
+
+.artWindow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    top:0;
+
+    height: 150vw;
+    width:100%;
+    
+    overflow: hidden;
+   
+    background: 
+    linear-gradient(to right,
+        rgba(231, 197, 158, 0.43)0%,
+        rgba(158, 192, 231, 0) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Keeps gradient fixed on scroll */
+    background-size: cover;
+    z-index: -15;
+
+}
+
+
+@media (min-width: 768px){
+    .artWindow{
+    height: 75vw;
+  
+    }
+}
+
+
+
+
+
+.artWindow_art {
+    position: absolute;
+
+    top:16vw;
+    width:100%;
+    height:100%;
+    transition: all 8s ease-out;
+
+    object-fit: cover;
+
+
+    z-index: -10;
+
+    --mask: linear-gradient(to bottom, 
+    rgba(0,0,0, 0) 1%, 
+    rgba(0,0,0, 1) 30%,   
+    rgba(0,0,0, 1) 0) 100%;
+    -webkit-mask: var(--mask); 
+    mask: var(--mask);
+
+}
+
+.artWindow_art.animated {
+    top:14vw;
+    width:110%;
+    height:110%;
+}
+
+
+
+@media (min-width: 768px){
+    .artWindow_art{
+        width:100%;
+        height:100%;
+        top:12vw;
+
+        transition: all 8s ease-out;
+    }
+
+    .artWindow_art.animated{
+    top:12vw;
+    width:110%;
+    height:110%;
+    }
+    
+}
+
+
+
+.artWindow_logo {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90%;
+    top: 35vw;
+
+    z-index: 2;
+    
+    }
+
+
+@media (min-width: 768px){
+    .artWindow_logo{
+
+        width: 70%;
+        top:3vw;
+  
+    }
+}
+
+
+
+
+
+
+
+
+
+.articleImage_Container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 20vh;
+    width:100%;
+    
+    overflow: hidden;
+
+}
+
+
+@media (min-width: 768px){
+    .articleImage_Container{
+        height: 100%; /* Set your desired height */
+
+    }
+}
+
+
+.articleImage_Container_L{
+    position: relative;
+    height: 0vh;
+    overflow: hidden;
+}
+
+@media (min-width: 768px){
+    .articleImage_Container_L{
+        height: 100%; /* Set your desired height */
+
+    }
+}
+
+
+.articleImage_Container_L-mobile{
+    position: relative;
+    height: 20vh;
+    overflow: hidden;
+}
+
+@media (min-width: 768px){
+    .articleImage_Container_L-mobile{
+        height: 0vh; /* Set your desired height */
+
+    }
+}
+
+
+
+.articleImage_ContainerC{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 20vh;
+    width:100%;
+    
+    overflow: hidden;
+}
+
+
+
+.articleImage{
+    position: absolute;
+    
+    width:100%;
+    height:100%;
+    transition: all 4s ease-out;
+
+    object-fit: cover;
+
+    z-index: -5;
+}
+
+.articleImage.animated{
+    width: 105%;
+    height: 105%;
+}
+
+
+.articleImage_C{
+    position: absolute;
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    z-index: -5;
+    
+
+    --mask: linear-gradient(to right, 
+    rgba(0,0,0, 0.4) 1%, 
+    rgba(0,0,0, 1) 20%,  
+    rgba(0,0,0, 1) 80%,   
+    rgba(0,0,0, 0.4) ) 100%;
+    -webkit-mask: var(--mask); 
+    mask: var(--mask);
+}
+
+
+
+
+.articleImage_R{
+    --mask: linear-gradient(to right, 
+    rgba(0,0,0, 1) 1%, 
+    rgba(0,0,0, 0.7) 50%,   
+    rgba(0,0,0, 0.4) ) 100%;
+    -webkit-mask: var(--mask); 
+    mask: var(--mask);
+
+
+}
+
+
+.articleImage_L{
+    --mask: linear-gradient(to left, 
+    rgba(0,0,0, 1) 1%, 
+    rgba(0,0,0, 0.7) 50%,   
+    rgba(0,0,0, 0.4) ) 100%;
+    -webkit-mask: var(--mask); 
+    mask: var(--mask);
+}
+
+
+
+.logo_Container{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+
+    background: 
+    linear-gradient(
+        to right,
+        rgba(255, 127, 58, 0.15)0%,
+        rgba(175, 247, 186, 0.1) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: 0;
+
+    margin-top: -2px;
+    margin-bottom: -2px;
+
+
+}
+
+
+.logo_Image{
+    position: absolute;
+    
+    width:100%;
+    height:100%;
+
+    object-fit: contain;
+
+    padding: 18px;
+    z-index: 10;
+}
+
+
+
+.portrait_Container{
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+
+    background: 
+    linear-gradient(
+        to right,
+        rgba(255, 127, 58, 0.15)0%,
+        rgba(175, 247, 186, 0.1) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    z-index: 0;
+
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+
+@media (min-width: 768px){
+    .portrait_Container{
+        justify-content: left;
+
+    }
+}
+
+
+.portrait_Image{
+    position: absolute;
+    
+    height:100%;
+    width:auto;
+
+    padding: 0px;
+    z-index: 10;
+}
+
+
+
+.socialIconsContainer{
+    position: relative;
+    height: 2vh;
+
+}
+
+
+
+.socialIcons{
+    position: absolute;
+    height: 100%;
+    width: auto;
+    padding: 3px;
+
+    mix-blend-mode: multiply;
+    z-index: 10;
+}
