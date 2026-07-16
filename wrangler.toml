@@ -6,3 +6,7 @@ command = "chmod +x build.sh && ./build.sh"
 
 [assets]
 directory = "./public"
+
+[[routes]]
+pattern = "npostmamsw.com/*"
+custom_domain = true
