@@ -8,5 +8,5 @@ command = "chmod +x build.sh && ./build.sh"
 directory = "./public"
 
 [[routes]]
-pattern = "npostmamsw.com/*"
+pattern = "npostmamsw.com"
 custom_domain = true
