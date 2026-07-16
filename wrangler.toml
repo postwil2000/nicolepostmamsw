@@ -1,15 +1,9 @@
-name = "npostmamsw"
+name = "nicolepostmamsw"
 compatibility_date = "2026-07-15"
-workers_dev = false
 
 [build]
 command = "chmod +x build.sh && ./build.sh"
 
 [assets]
 directory = "./public"
-html_handling = "drop-trailing-slash"
-not_found_handling = "single-page-application"
 
-[[routes]]
-pattern = "npostmamsw.com"
-custom_domain = true
