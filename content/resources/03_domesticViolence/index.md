@@ -11,5 +11,5 @@ blockType = "textFull"
 
 +++
 
-Gillian’s place: <http://gilliansplace.com>  
-Birchway Niagara: <https://birchway.ca>
+**Gillian’s place:** <http://gilliansplace.com>  
+**Birchway Niagara:** <https://birchway.ca>
