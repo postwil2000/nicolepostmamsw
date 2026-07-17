@@ -69,7 +69,12 @@
       <div class="row justify-content-center">
         <div class="col">
 
-          <div class="articleImage_ContainerC">
+          <div class="articleImage_ContainerC {%- if page.extra.quote -%} quoteBumper {%- endif -%}">
+
+            {%- if page.extra.quote -%} 
+            <div class="quoteBumper">
+            {%- endif -%}
+
             {%- for asset in page.assets -%}
               {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("bkg") %}
 
@@ -111,6 +116,7 @@
 
                 </div>
 
+              
               </div>
 
             {%- endif -%}
@@ -329,6 +335,8 @@
 
 
                 <div class="articleImage_Container_L-mobile">
+
+                  
                   {%- for asset in page.assets -%}
                     {% if asset is matching("[.](JPG|jpg|JPEG|jpeg|PNG|png)$") and page.extra.imgType is matching("bkg") %}
 

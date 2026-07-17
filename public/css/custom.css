@@ -9,8 +9,6 @@ body{
 }
 
 
-
-
 h4 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: italic;
@@ -22,10 +20,7 @@ span{
     font-size: 16px;
     font-weight: bold;
     font-style: italic;
-
 }
-
-
 
 
 .baseBKG {
@@ -42,9 +37,11 @@ span{
     background-repeat: no-repeat;
     background-attachment: fixed; /* Keeps gradient fixed on scroll */
     background-size: cover;
-    z-index: -20;
+    z-index: -20;    
+}
 
-    
+.section{
+    overflow: hidden;
 }
 
 
@@ -95,10 +92,6 @@ span{
 
     border-radius: 50%;
 }
-
-
-
-
 
 
 
@@ -203,7 +196,7 @@ span{
 
 .divTest{
     background-color: rgba(209, 43, 43, 0.63);
-    z-index: 50;
+    z-index: 100;
 }
 
 
@@ -321,12 +314,6 @@ span{
 
 
 
-
-
-
-
-
-
 .articleImage_Container{
     position: relative;
     display: flex;
@@ -334,6 +321,7 @@ span{
     align-items: center;
 
     height: 20vh;
+    min-height: 260px;
     width:100%;
     
     overflow: hidden;
@@ -344,7 +332,7 @@ span{
 @media (min-width: 768px){
     .articleImage_Container{
         height: 100%; /* Set your desired height */
-
+        min-height: 0px;
     }
 }
 
@@ -366,13 +354,15 @@ span{
 .articleImage_Container_L-mobile{
     position: relative;
     height: 20vh;
+    min-height: 260px;
+
     overflow: hidden;
 }
 
 @media (min-width: 768px){
     .articleImage_Container_L-mobile{
         height: 0vh; /* Set your desired height */
-
+        min-height: 0px;
     }
 }
 
@@ -389,6 +379,7 @@ span{
     
     overflow: hidden;
 }
+
 
 
 
