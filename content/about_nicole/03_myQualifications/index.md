@@ -8,10 +8,11 @@ description = "My Qualifications:"
 blockType = "textFull"
 +++
 
-
-* **Trauma Center Trauma-Sensitive Yoga (TCTSY)** \- 300-hour program
-* **Integrative Somatic Trauma Therapy** \- 60-hour certificate
-* **Cognitive Behavioral Therapy (CBT)**
-* **ADHD**-focused trainings
-* **Somatic EMDR** \- 60 hour training
-* **Yoga Teacher Training** \- (500hr)
+* **Master of Social Work** \- University of Toronto, 2005
+* **Trauma Center Trauma-Sensitive Yoga (TCTSY)** \- The Center for Trauma and Embodiment, 2019
+* **Integrative Somatic Trauma Therapy** \- The Embody Lab, 2023
+* **Somatic EMDR** \- The Embody Lab, 2025
+* **Cognitive Behavioral Therapy (CBT)** \- Sick Kids, 2019
+* **Yoga and Mindfulness trainings** \- CYA-E-RYT 500
+* **ADHD-focused trainings**
+* **Trauma related trainings**

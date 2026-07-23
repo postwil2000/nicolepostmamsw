@@ -11,12 +11,9 @@ imgType = "bkg"
 
 +++
 
-**Somatic Experiencing (SE)**<br>
-Developed by Dr. Peter Levine, this technique involves tracking physical sensations (such as a racing heart or shallow breathing) while discussing past stressors to help the nervous system process and release trauma.
-
 
 **Body Awareness & Scanning**<br>
-Mentally scanning the body to identify tension points, numbness or pain, enabling you to recognize your body’s physical cues of stress.
+Mentally scanning the body to identify tension points, numbness or pain, enabling you to recognize your body’s physical cues of stress; tracking physical sensations (such as a racing heart or shallow breathing) while discussing past stressors to help the nervous system process and release trauma.
 
 
 **Titration & Pendulation**<br>
