@@ -20,7 +20,6 @@ blockType = "textFull"
 Each group session is offered in a **closed-group format** for 8 week sessions.  Each group session is a **Registered Social Work Service** and could be covered by private insurance or submitted at income tax time.
 
 Details:
-* **Price:** $200 per 8 week session
 * **Next 8 Week Session:** September 6 2026 - October 25, 2026
 * **Format:** In-Person or Remote/Hybrid sessions available
 * **Time:** Mondays, 5-6pm 

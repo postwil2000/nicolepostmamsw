@@ -8,6 +8,7 @@ description = "My Qualifications:"
 blockType = "textFull"
 +++
 
+* **Registered Social Worker** \- Ontario College of Social Workers and Social Service Workers
 * **Master of Social Work** \- University of Toronto, 2005
 * **Trauma Center Trauma-Sensitive Yoga (TCTSY)** \- The Center for Trauma and Embodiment, 2019
 * **Integrative Somatic Trauma Therapy** \- The Embody Lab, 2023
