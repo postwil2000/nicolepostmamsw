@@ -417,24 +417,28 @@ a {
 
 
 .articleImage_R{
-    --mask: linear-gradient(to right, 
-    rgba(0,0,0, 1) 1%, 
-    rgba(0,0,0, 0.7) 50%,   
-    rgba(0,0,0, 0.4) ) 100%;
-    -webkit-mask: var(--mask); 
-    mask: var(--mask);
 
-
+    -webkit-mask: linear-gradient(to right, 
+        rgba(0,0,0, 1) 1%, 
+        rgba(0,0,0, 0.7) 50%,   
+        rgba(0,0,0, 0.4) ) 100%; 
+    mask: linear-gradient(to right, 
+        rgba(0,0,0, 1) 1%, 
+        rgba(0,0,0, 0.7) 50%,   
+        rgba(0,0,0, 0.4) ) 100%;
 }
 
 
 .articleImage_L{
-    --mask: linear-gradient(to left, 
-    rgba(0,0,0, 1) 1%, 
-    rgba(0,0,0, 0.7) 50%,   
-    rgba(0,0,0, 0.4) ) 100%;
-    -webkit-mask: var(--mask); 
-    mask: var(--mask);
+
+    -webkit-mask: linear-gradient(to left, 
+        rgba(0,0,0, 1) 1%, 
+        rgba(0,0,0, 0.7) 50%,   
+        rgba(0,0,0, 0.4) ) 100%; 
+    mask: linear-gradient(to left, 
+        rgba(0,0,0, 1) 1%, 
+        rgba(0,0,0, 0.7) 50%,   
+        rgba(0,0,0, 0.4) ) 100%;
 }
 
 
