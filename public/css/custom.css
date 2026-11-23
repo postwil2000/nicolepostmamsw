@@ -35,6 +35,11 @@ a {
     margin: 0;           /* Remove default browser margins */
     padding: 0;          /* Remove default padding */
     background: 
+    -webkit-linear-gradient(
+        to bottom,
+        rgba(110, 143, 158, 1)0%,
+        rgba(177, 129, 110, 1) 100%);
+    background: 
     linear-gradient(
         to bottom,
         rgba(110, 143, 158, 1)0%,
